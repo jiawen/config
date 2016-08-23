@@ -1,0 +1,27 @@
+set completion-ignore-case on
+# If there are ambiguous completions, show immediately, don't ring the bell first.
+# Do the same if the completion is unmofified.
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# Expand homedir name.
+set expand-tilde on
+
+# bash 4.0+ only!
+set completion-prefix-display-length 2
+
+C-j: menu-complete
+# Option-J to menu complete backward.
+"\ej": menu-complete-backward
+
+# Enable 8-bit inputs for UTF-8.
+# (The default is 7-bit, which strips off the 8th bit.)
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# Symlinked directories come with trailing slash
+set mark-symlinked-directories on
+
+# don't beep at me - show me
+#set bell-style visible
