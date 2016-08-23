@@ -1,11 +1,3 @@
-" TODO before this config file works:
-" 0. $ mkdir ~/.vimbackups
-"    # On Windows: $ mkdir <homedir>/vimfiles
-" 1. On Linux: install the Inconsolata font.
-" 2. Install Vundle:
-"    $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-"    # Start Vim and run :PluginInstall
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -177,6 +169,14 @@ noremap <C-S-TAB> :MBEbb<CR>
 
 " bclose: close a buffer without closing its window.
 Plugin 'rbgrouleff/bclose.vim'
+
+" better-whitespace: highlight trailing whitespaces and add the StripWhiteSpace
+" command.
+Plugin 'ntpeters/vim-better-whitespace'
+
+" Indent Guides.
+" Press <Leader>ig to toggle
+Bundle 'nathanaelkane/vim-indent-guides'
 
 " OmniCppComplete.
 Plugin 'https://github.com/vim-scripts/OmniCppComplete'
