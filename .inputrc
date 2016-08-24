@@ -1,6 +1,32 @@
+# Be 8-bit clean: accept 8-bit (UTF-8) characters as input.
+set input-meta on
+# Display 8-bit characters directly, don't escape them.
+set output-meta on
+set convert-meta off
+
+# Map Ctrl-left-arrow and Ctrl-right-arrow to skip words.
+# Different terminals escape differently - might as well set the three common
+# ones.
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+# Map up-arrow and down-arrow to search history with current commandline as
+# prefix.
+"\e[A":history-search-backward
+"\e[B":history-search-forward
+# Default is Alt-P / Alt-N, leave those too.
+"\ep":history-search-backward
+"\en":history-search-forward
+
+###### Completion.
 set completion-ignore-case on
+
 # If there are ambiguous completions, show immediately, don't ring the bell first.
-# Do the same if the completion is unmofified.
+# Do the same if the completion is unmodified.
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
@@ -10,18 +36,13 @@ set expand-tilde on
 # bash 4.0+ only!
 set completion-prefix-display-length 2
 
+# Menu completion.
 C-j: menu-complete
-# Option-J to menu complete backward.
+# Alt/Option-J to menu complete backward.
 "\ej": menu-complete-backward
-
-# Enable 8-bit inputs for UTF-8.
-# (The default is 7-bit, which strips off the 8th bit.)
-set input-meta on
-set output-meta on
-set convert-meta off
 
 # Symlinked directories come with trailing slash
 set mark-symlinked-directories on
 
-# don't beep at me - show me
+# Don't beep at me - show me.
 #set bell-style visible

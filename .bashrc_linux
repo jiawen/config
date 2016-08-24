@@ -1,0 +1,29 @@
+# Editor
+export EDITOR=vim
+
+# Aliases
+alias open='xdg-open'
+alias ack='ack-grep'
+
+# Keychain
+# TODO: enable
+# eval `keychain --eval --agents ssh id_rsa`
+
+# bash-completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# Make less more friendly for non-text input files, see lesspipe(1).
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# Solarized LS_COLORS
+if [ -f $HOME/.dircolors ] ; then
+    eval $(dircolors -b $HOME/.dircolors)
+fi
+
+# Python virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
