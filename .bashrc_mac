@@ -2,6 +2,9 @@
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export DISPLAY=:0.0
 
+# Visual Studio Code
+export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 # Editor
 export EDITOR=mvim
 
