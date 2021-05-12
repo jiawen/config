@@ -7,7 +7,7 @@ alias mv='mv -i'
 alias less='less -i'
 
 if [[ $OSTYPE =~ ^darwin ]]; then
-    alias ls='ls -F -h -G'
+    alias ls='gls -F -h --color=auto --group-directories-first'
 else
     alias ls='ls -F -h --color=auto'
 fi
